@@ -5,8 +5,8 @@
     <classes>
       <class name="automationtask.tugas.AppTest">
         <methods>
+          <include name="TripToAndFrom"/>
           <include name="quitChromeDriver"/>
-          <include name="testSwitching"/>
           <include name="createChromeDriver"/>
         </methods>
       </class> <!-- automationtask.tugas.AppTest -->

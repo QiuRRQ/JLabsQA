@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,15 +20,10 @@ public class BaseWeb implements IDriverManager {
 	@BeforeMethod
 	public void createChromeDriver() {
 		// TODO Auto-generated method stub
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("enable-popup-blocking");
 		WebDriverManager.chromedriver().setup();
-//		driver = new ChromeDriver();
-		driver.set(new ChromeDriver());
-//		driver.get("https://testautomasi.com");
-		driver.get().get("https://yopmail.com/en/");
-//		driver.manage().window().maximize();
-		driver.get().manage().window().maximize();
-		
-		explicitWait.set(new WebDriverWait(driver.get(), Duration.ofSeconds(60)));
+		driver.set(new ChromeDriver(options));	
 	}
 
 	@AfterMethod
